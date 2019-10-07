@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package justcy.uc.micro.srv.user;
+import "google/protobuf/timestamp.proto";
+import "./base.proto";
+
+service UserService{
+    rpc Create(User) returns (Response){}
+}
+
+message User{
+    google.protobuf.Timestamp lastUpdate = 7;
+}
+message Response{
+
+}
