@@ -1,0 +1,22 @@
+version: "2"
+services:
+  notificator:
+    build:
+      context: .
+      dockerfile: notificator/Dockerfile
+    restart: always
+    volumes:
+    - .:/go/src/github.com/justcy/uc
+    container_name: notificator
+    ports:
+    - 8801:8082
+  users:
+    build:
+      context: .
+      dockerfile: users/Dockerfile
+    restart: always
+    volumes:
+    - .:/go/src/github.com/justcy/uc
+    container_name: users
+    ports:
+    - 8800:8081
